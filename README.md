@@ -52,3 +52,26 @@ Validated dataset consistency prior to feature extraction.
 Outcome
 
 Confirmed that the dataset is ready for acoustic signal processing and machine learning feature engineering.
+
+---
+
+✅ Milestone 4 – Acoustic Feature Engineering Pipeline
+
+Converted raw pump audio recordings into structured numerical features suitable for machine learning.
+
+Features Extracted
+Zero Crossing Rate (ZCR)
+Root Mean Square (RMS) Energy
+Spectral Centroid
+Spectral Bandwidth
+Spectral Roll-off
+Mel-Frequency Cepstral Coefficients (MFCCs)
+Completed
+Built a reusable acoustic feature extraction pipeline.
+Processed all 868 audio recordings.
+Generated a structured feature dataset.
+Exported the processed dataset in CSV format for downstream machine learning tasks.
+Saved the processed dataset in Pickle format for efficient loading in Python workflows.
+Outcome
+
+Successfully transformed raw acoustic signals into a structured machine learning dataset that serves as the foundation for exploratory data analysis and predictive modeling.
