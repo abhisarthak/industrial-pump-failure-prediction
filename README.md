@@ -14,6 +14,8 @@ Installed required project dependencies.
 Created the end-to-end Jupyter notebook.
 Organized directories for notebooks, models, reports, results, and source code.
 
+---
+
 ✅ Milestone 2 – Dataset Exploration and Validation
 
 Explored and validated the structure of the industrial pump audio dataset before beginning feature engineering.
@@ -33,3 +35,20 @@ Abnormal Recordings	456
 Outcome
 
 Successfully verified the integrity and organization of the raw dataset before further processing.
+
+---
+
+✅ Milestone 3 – Audio Inspection and Dataset Integrity
+
+Validated the quality and consistency of the raw acoustic recordings.
+
+Completed
+Loaded sample audio recordings using Librosa.
+Verified sampling rate and recording duration.
+Visualized the waveform of pump recordings.
+Embedded an audio player within the notebook.
+Confirmed that recordings are readable and suitable for signal processing.
+Validated dataset consistency prior to feature extraction.
+Outcome
+
+Confirmed that the dataset is ready for acoustic signal processing and machine learning feature engineering.
