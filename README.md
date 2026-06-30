@@ -77,6 +77,24 @@ Outcome
 Successfully transformed raw acoustic signals into a structured machine learning dataset that serves as the foundation for exploratory data analysis and predictive modeling.
 
 ---
+# ✅ Milestone 5 – Exploratory Data Analysis (EDA)
+
+Performed comprehensive exploratory analysis to understand the statistical properties and predictive potential of the extracted acoustic features.
+
+### Dataset Quality Assessment
+
+- Verified dataset dimensions and structure.
+- Inspected feature data types.
+- Checked for missing values.
+- Checked for duplicate records.
+
+### Statistical Analysis
+
+- Generated descriptive statistics for all acoustic features.
+- Evaluated measures of central tendency and variability.
+- Examined feature distributions.
+
+---
 
 📈 Current Project Status
 Raw Pump Audio (.wav)
