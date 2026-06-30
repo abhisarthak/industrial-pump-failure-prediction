@@ -112,6 +112,32 @@ Performed comprehensive exploratory analysis to understand the statistical prope
 - Evaluated measures of central tendency and variability.
 - Examined feature distributions.
 
+  ### Univariate Analysis
+
+- Visualized feature distributions using histograms.
+- Identified potential outliers through boxplots.
+- Measured feature skewness.
+- Evaluated feature variability.
+
+### Bivariate Analysis
+
+- Compared acoustic features across normal and abnormal pump conditions.
+- Analyzed target class distribution.
+- Evaluated feature separation using comparative boxplots.
+- Compared average feature values between operating conditions.
+
+### Correlation Analysis
+
+- Generated the correlation matrix.
+- Visualized feature relationships using a heatmap.
+- Identified highly correlated acoustic features.
+- Investigated potential feature redundancy.
+
+### Outcome
+
+The exploratory analysis confirmed that the extracted acoustic features capture meaningful differences between healthy and faulty pump operating conditions, providing a strong foundation for predictive machine learning models.
+
+
 ---
 
 📈 Current Project Status
