@@ -50,20 +50,22 @@ Successfully validated the dataset structure and operating condition distributio
 
 ---
 
-✅ Milestone 3 – Audio Inspection and Dataset Integrity
+# ✅ Milestone 3 – Audio Inspection and Signal Validation
 
-Validated the quality and consistency of the raw acoustic recordings.
+Validated the quality and integrity of the raw acoustic recordings.
 
-Completed
-Loaded sample audio recordings using Librosa.
-Verified sampling rate and recording duration.
-Visualized the waveform of pump recordings.
-Embedded an audio player within the notebook.
-Confirmed that recordings are readable and suitable for signal processing.
-Validated dataset consistency prior to feature extraction.
-Outcome
+### Completed
 
-Confirmed that the dataset is ready for acoustic signal processing and machine learning feature engineering.
+- Loaded sample pump recordings using Librosa.
+- Verified sampling rate and recording duration.
+- Visualized audio waveforms.
+- Embedded an audio player within the notebook.
+- Confirmed that the recordings are readable and suitable for acoustic analysis.
+
+### Outcome
+
+Verified that the raw acoustic signals are consistent and suitable for feature engineering.
+
 
 ---
 
