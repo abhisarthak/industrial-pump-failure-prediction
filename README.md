@@ -23,25 +23,30 @@ A professional project structure was established to support reproducible machine
 
 ---
 
-✅ Milestone 2 – Dataset Exploration and Validation
+# ✅ Milestone 2 – Dataset Exploration and Validation
 
-Explored and validated the structure of the industrial pump audio dataset before beginning feature engineering.
+Explored and validated the industrial pump acoustic dataset before beginning feature engineering.
 
-Completed
-Loaded the complete dataset.
-Verified dataset directory structure.
-Identified all available pump IDs.
-Counted normal and abnormal operating recordings.
-Calculated the overall dataset distribution.
-Dataset Summary
-Metric	Value
-Pump IDs	4
-Total Audio Recordings	868
-Normal Recordings	412
-Abnormal Recordings	456
-Outcome
+### Completed
 
-Successfully verified the integrity and organization of the raw dataset before further processing.
+- Loaded the complete pump audio dataset.
+- Verified the dataset directory structure.
+- Identified all available pump IDs.
+- Counted normal and abnormal operating recordings.
+- Verified dataset consistency and integrity.
+
+### Dataset Summary
+
+| Metric | Value |
+|--------|------:|
+| Pump IDs | 4 |
+| Total Audio Recordings | 868 |
+| Normal Recordings | 412 |
+| Abnormal Recordings | 456 |
+
+### Outcome
+
+Successfully validated the dataset structure and operating condition distribution before signal processing.
 
 ---
 
