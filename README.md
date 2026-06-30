@@ -1,18 +1,25 @@
-🚀 Project Progress
+# 🚀 Project Progress
 
-The project is being developed as a production-style machine learning pipeline for industrial predictive maintenance. Rather than building the entire solution at once, each stage focuses on a specific engineering milestone, resulting in a well-documented and reproducible workflow.
+This project is being developed as a production-oriented machine learning pipeline for industrial predictive maintenance. Each milestone represents a major engineering stage, transforming raw acoustic recordings into actionable insights for fault detection and predictive maintenance.
 
-✅ Milestone 1 – Project Initialization
+---
 
-Established the foundation for a scalable machine learning project.
+# ✅ Milestone 1 – Project Initialization
 
-Completed
-Created a modular project directory structure.
-Configured Git and GitHub for version control.
-Set up a Python virtual environment.
-Installed required project dependencies.
-Created the end-to-end Jupyter notebook.
-Organized directories for notebooks, models, reports, results, and source code.
+Established a scalable and reproducible project structure following machine learning engineering best practices.
+
+### Completed
+
+- Created a modular project directory structure.
+- Configured Git and GitHub for version control.
+- Set up a Python virtual environment.
+- Installed required project dependencies.
+- Organized directories for notebooks, models, reports, results, source code, and datasets.
+- Created the end-to-end project notebook.
+
+### Outcome
+
+A professional project structure was established to support reproducible machine learning development.
 
 ---
 
