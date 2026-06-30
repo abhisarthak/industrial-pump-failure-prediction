@@ -144,16 +144,21 @@ The exploratory analysis confirmed that the extracted acoustic features capture 
 Raw Pump Audio (.wav)
           │
           ▼
+          
 Dataset Validation
           │
           ▼
+          
 Audio Inspection
           │
           ▼
+          
 Acoustic Feature Extraction
           │
           ▼
+          
 Structured Machine Learning Dataset ✅
           │
           ▼
+          
 Exploratory Data Analysis (Next)
