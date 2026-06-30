@@ -69,26 +69,30 @@ Verified that the raw acoustic signals are consistent and suitable for feature e
 
 ---
 
-✅ Milestone 4 – Acoustic Feature Engineering Pipeline
+# ✅ Milestone 4 – Acoustic Feature Engineering
 
-Converted raw pump audio recordings into structured numerical features suitable for machine learning.
+Converted raw pump recordings into structured numerical features suitable for machine learning.
 
-Features Extracted
-Zero Crossing Rate (ZCR)
-Root Mean Square (RMS) Energy
-Spectral Centroid
-Spectral Bandwidth
-Spectral Roll-off
-Mel-Frequency Cepstral Coefficients (MFCCs)
-Completed
-Built a reusable acoustic feature extraction pipeline.
-Processed all 868 audio recordings.
-Generated a structured feature dataset.
-Exported the processed dataset in CSV format for downstream machine learning tasks.
-Saved the processed dataset in Pickle format for efficient loading in Python workflows.
-Outcome
+### Acoustic Features Extracted
 
-Successfully transformed raw acoustic signals into a structured machine learning dataset that serves as the foundation for exploratory data analysis and predictive modeling.
+- Zero Crossing Rate (ZCR)
+- Root Mean Square (RMS) Energy
+- Spectral Centroid
+- Spectral Bandwidth
+- Spectral Roll-off
+- 13 Mel-Frequency Cepstral Coefficients (MFCCs)
+
+### Completed
+
+- Built a reusable acoustic feature extraction pipeline using Librosa.
+- Processed all **868 pump recordings**.
+- Generated a structured machine learning feature dataset.
+- Exported the processed dataset as **CSV** for downstream analytics.
+- Saved the processed dataset as **Pickle** for efficient future loading.
+
+### Outcome
+
+Successfully transformed raw acoustic recordings into a structured feature dataset that forms the foundation for statistical analysis and machine learning.
 
 ---
 # ✅ Milestone 5 – Exploratory Data Analysis (EDA)
