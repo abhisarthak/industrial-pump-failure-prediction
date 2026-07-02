@@ -199,6 +199,24 @@ An optimized predictive model capable of delivering improved classification perf
 
 ---
 
+# ⏳ Milestone 9 – Explainable AI
+
+Increase model transparency by explaining prediction behavior.
+
+### Planned Tasks
+
+- Compute Feature Importance.
+- Perform SHAP analysis.
+- Generate global feature explanations.
+- Explain individual model predictions.
+- Interpret model decisions from an engineering perspective.
+
+### Expected Outcome
+
+A transparent machine learning model that provides understandable and trustworthy predictions for predictive maintenance.
+
+---
+
 📈 Current Project Status
 Raw Pump Audio (.wav)
           │
