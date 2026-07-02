@@ -217,6 +217,24 @@ A transparent machine learning model that provides understandable and trustworth
 
 ---
 
+# ⏳ Milestone 10 – Predictive Maintenance Decision Framework
+
+Translate machine learning predictions into actionable maintenance recommendations.
+
+### Planned Tasks
+
+- Develop pump risk scoring.
+- Prioritize maintenance actions.
+- Estimate maintenance urgency.
+- Compare preventive and reactive maintenance strategies.
+- Analyze potential operational impact.
+
+### Expected Outcome
+
+A decision-support framework that assists maintenance teams in planning timely interventions and reducing unexpected equipment failures.
+
+---
+
 📈 Current Project Status
 Raw Pump Audio (.wav)
           │
