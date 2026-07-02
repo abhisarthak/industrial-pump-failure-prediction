@@ -158,6 +158,29 @@ A clean, reproducible, and machine learning-ready dataset for model training and
 
 ---
 
+# ⏳ Milestone 7 – Baseline Machine Learning Models
+
+Develop baseline classification models to establish initial predictive performance.
+
+### Planned Tasks
+
+- Train Logistic Regression.
+- Train Decision Tree.
+- Train Random Forest.
+- Evaluate using:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-Score
+  - ROC-AUC
+- Compare baseline model performance.
+
+### Expected Outcome
+
+Identify the most promising baseline model for predictive maintenance using acoustic features.
+
+---
+
 📈 Current Project Status
 Raw Pump Audio (.wav)
           │
