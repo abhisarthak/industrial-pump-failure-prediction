@@ -235,6 +235,24 @@ A decision-support framework that assists maintenance teams in planning timely i
 
 ---
 
+# ⏳ Milestone 11 – Deployment
+
+Develop an interactive interface for real-world demonstration.
+
+### Planned Tasks
+
+- Build an interactive Streamlit dashboard.
+- Display prediction results.
+- Visualize acoustic features.
+- Present model confidence and explanations.
+- Demonstrate an end-to-end predictive maintenance workflow.
+
+### Expected Outcome
+
+A user-friendly application that allows engineers and stakeholders to interact with the predictive maintenance system.
+
+---
+
 📈 Current Project Status
 Raw Pump Audio (.wav)
           │
