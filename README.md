@@ -181,6 +181,24 @@ Identify the most promising baseline model for predictive maintenance using acou
 
 ---
 
+# ⏳ Milestone 8 – Hyperparameter Optimization
+
+Improve baseline model performance through systematic hyperparameter tuning.
+
+### Planned Tasks
+
+- Perform GridSearchCV.
+- Apply Cross-Validation.
+- Optimize Random Forest parameters.
+- Compare baseline and optimized models.
+- Reduce overfitting while improving generalization.
+
+### Expected Outcome
+
+An optimized predictive model capable of delivering improved classification performance on unseen pump recordings.
+
+---
+
 📈 Current Project Status
 Raw Pump Audio (.wav)
           │
