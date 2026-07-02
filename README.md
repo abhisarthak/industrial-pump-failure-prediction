@@ -139,7 +139,7 @@ The exploratory analysis confirmed that the extracted acoustic features capture 
 
 
 ---
-# 🔄 Milestone 6 – Data Preprocessing
+# ✅ Milestone 6 – Data Preprocessing
 
 Prepare the engineered feature dataset for supervised machine learning.
 
@@ -158,7 +158,7 @@ A clean, reproducible, and machine learning-ready dataset for model training and
 
 ---
 
-# ⏳ Milestone 7 – Baseline Machine Learning Models
+# ✅ Milestone 7 – Baseline Machine Learning Models
 
 Develop baseline classification models to establish initial predictive performance.
 
@@ -181,7 +181,7 @@ Identify the most promising baseline model for predictive maintenance using acou
 
 ---
 
-# ⏳ Milestone 8 – Hyperparameter Optimization
+# ✅ Milestone 8 – Hyperparameter Optimization
 
 Improve baseline model performance through systematic hyperparameter tuning.
 
@@ -199,7 +199,7 @@ An optimized predictive model capable of delivering improved classification perf
 
 ---
 
-# ⏳ Milestone 9 – Explainable AI
+# ✅ Milestone 9 – Explainable AI
 
 Increase model transparency by explaining prediction behavior.
 
@@ -217,7 +217,7 @@ A transparent machine learning model that provides understandable and trustworth
 
 ---
 
-# ⏳ Milestone 10 – Predictive Maintenance Decision Framework
+# ✅ Milestone 10 – Predictive Maintenance Decision Framework
 
 Translate machine learning predictions into actionable maintenance recommendations.
 
@@ -235,7 +235,7 @@ A decision-support framework that assists maintenance teams in planning timely i
 
 ---
 
-# ⏳ Milestone 11 – Deployment
+# ✅ Milestone 11 – Deployment
 
 Develop an interactive interface for real-world demonstration.
 
@@ -252,7 +252,7 @@ Develop an interactive interface for real-world demonstration.
 A user-friendly application that allows engineers and stakeholders to interact with the predictive maintenance system.
 
 ---
-# ⏳ Milestone 12 – Project Finalization
+# ✅ Milestone 12 – Project Finalization
 
 Prepare the project for production-quality presentation and documentation.
 
