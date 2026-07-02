@@ -139,6 +139,24 @@ The exploratory analysis confirmed that the extracted acoustic features capture 
 
 
 ---
+# 🔄 Milestone 6 – Data Preprocessing
+
+Prepare the engineered feature dataset for supervised machine learning.
+
+### Planned Tasks
+
+- Separate predictor variables and target labels.
+- Encode categorical target classes.
+- Perform stratified train-test splitting.
+- Prevent data leakage.
+- Evaluate the need for feature scaling across different algorithms.
+- Save processed datasets for reproducible model development.
+
+### Expected Outcome
+
+A clean, reproducible, and machine learning-ready dataset for model training and evaluation.
+
+---
 
 📈 Current Project Status
 Raw Pump Audio (.wav)
