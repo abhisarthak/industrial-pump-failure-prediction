@@ -1,0 +1,4 @@
+Model,Train Accuracy,Test Accuracy,Precision,Recall,F1 Score,ROC-AUC
+Random Forest,1.0,0.885,0.909,0.843,0.875,0.96
+Logistic Regression,0.866,0.862,0.893,0.807,0.848,0.944
+Decision Tree,1.0,0.822,0.817,0.807,0.812,0.821
