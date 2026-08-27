@@ -1,0 +1,13 @@
+KPI,Value
+Total Pumps,174.0
+Pumps Selected,37.0
+Risk Threshold (α),0.6
+Risk-Threshold Coverage (%),54.41176470588235
+Actual Failure Coverage (%),43.373493975903614
+Maintenance Hours Used,148.0
+Available Maintenance Hours,148.0
+Capacity Utilization (%),100.0
+Expected Failure Loss (₹),3354000.0
+Maintenance Cost (₹),296000.0
+Expected Net Benefit (₹),3058000.0
+Net Benefit per Hour (₹),20662.162162162163

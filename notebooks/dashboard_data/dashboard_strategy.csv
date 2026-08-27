@@ -1,0 +1,4 @@
+Strategy,Pumps Selected,Maintenance Hours,Risk-Threshold Selected,Actual Failures Covered,Failure Coverage (%),Expected Net Benefit (₹),Net Benefit per Hour (₹)
+ML Risk Ranking,37,124.0,37,37,44.58,1931800.29,15579.03
+Economic Ranking,32,148.0,32,32,38.55,1766556.45,11936.19
+Risk-Constrained MILP,37,148.0,37,36,43.37,3058000.0,20662.16
