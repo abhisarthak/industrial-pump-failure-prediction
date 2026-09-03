@@ -156,3 +156,165 @@ The extracted coefficients were represented as:
 ```text
 MFCC_1, MFCC_2, ..., MFCC_13
 ```
+## ✅ 3. Exploratory Data Analysis (EDA)
+
+After converting the raw acoustic recordings into structured numerical features, Exploratory Data Analysis (EDA) was performed to understand the statistical behavior of the dataset and investigate whether the extracted acoustic characteristics differ between normal and abnormal pump operating conditions.
+
+The primary objective of this stage was to understand the data before applying machine learning. This included assessing data quality, examining feature distributions, identifying potential outliers and redundancy, and studying the relationship between acoustic features and the target operating condition.
+
+---
+
+### 3.1 Dataset Structure & Quality Assessment
+
+The processed feature dataset was first inspected to ensure that it was suitable for statistical analysis and subsequent machine learning.
+
+The following checks were performed:
+
+- Verified the number of observations and features.
+- Inspected the data types of all variables.
+- Identified the predictor variables and target label.
+- Checked for missing values.
+- Checked for duplicate observations.
+- Examined the distribution of the target classes.
+- Verified that the extracted acoustic features were stored in the expected numerical format.
+
+These checks helped ensure that potential data-quality issues were identified before model development.
+
+---
+
+### 3.2 Descriptive Statistical Analysis
+
+Descriptive statistics were generated for the extracted acoustic features to understand their numerical behavior.
+
+For each feature, measures such as:
+
+- Mean
+- Standard deviation
+- Minimum
+- Maximum
+- Quartiles
+
+were examined.
+
+This provided an initial understanding of the central tendency, variability, and range of the acoustic measurements across the recordings.
+
+For example, features such as RMS represent signal energy, while spectral features and MFCCs describe different aspects of the frequency structure. Examining their statistical ranges helped identify differences in scale and variability that would later be considered during preprocessing.
+
+---
+
+### 3.3 Univariate Analysis
+
+Each acoustic feature was analyzed independently to understand its individual distribution across the dataset.
+
+#### Distribution Analysis
+
+Histograms were generated to examine:
+
+- The shape of each feature distribution.
+- Concentration of observations.
+- Possible skewness.
+- Variation across recordings.
+- Potential non-uniform distributions.
+
+This helped determine whether certain acoustic features exhibited unusual or highly asymmetric distributions.
+
+#### Outlier Analysis
+
+Boxplots were used to identify potential extreme observations.
+
+The analysis examined whether individual recordings contained feature values substantially different from the majority of the dataset.
+
+Potential outliers were treated as observations requiring investigation rather than automatically being removed, since unusual acoustic measurements may represent genuine changes in pump operating conditions.
+
+#### Skewness Analysis
+
+Feature skewness was evaluated to understand whether the distributions were approximately symmetric or strongly skewed.
+
+This was particularly relevant for determining the statistical behavior of the extracted acoustic variables and informing subsequent preprocessing decisions.
+
+---
+
+### 3.4 Bivariate Analysis
+
+The next stage examined relationships between individual acoustic features and the pump operating condition.
+
+The acoustic features were compared between:
+
+- **Normal operating condition**
+- **Abnormal operating condition**
+
+Comparative visualizations were used to determine whether the distributions of individual features differed between the two classes.
+
+### Analysis Performed
+
+- Feature-wise comparison of normal and abnormal recordings.
+- Comparative boxplots.
+- Class distribution analysis.
+- Comparison of average feature values between operating conditions.
+- Examination of feature-level separation between the two target classes.
+
+The purpose was not to assume that any individual feature could independently diagnose pump failure, but to determine whether the extracted acoustic measurements contained useful discriminatory information that could be combined by a machine learning model.
+
+---
+
+### 3.5 Target Class Analysis
+
+The target variable was examined to understand the distribution of normal and abnormal observations.
+
+The dataset contained:
+
+| Operating Condition | Recordings |
+|---|---:|
+| Normal | **412** |
+| Abnormal | **456** |
+| **Total** | **868** |
+
+The class distribution was considered during subsequent model development because differences in class frequency can influence the behavior of classification algorithms and evaluation metrics.
+
+This analysis subsequently motivated the use of appropriate preprocessing and class-imbalance handling during the machine learning stage.
+
+---
+
+### 3.6 Correlation Analysis
+
+A correlation matrix was generated to investigate relationships between the acoustic features.
+
+A heatmap was used to visualize the correlation structure across the feature set.
+
+The analysis helped identify:
+
+- Strongly correlated acoustic features.
+- Features containing potentially overlapping information.
+- Relationships between spectral and cepstral characteristics.
+- Potential feature redundancy.
+- Groups of features with similar statistical behavior.
+
+Understanding feature correlations is important because the feature set contains multiple measurements derived from related properties of the same acoustic signal.
+
+However, correlated features were not automatically removed at this stage. Their usefulness was evaluated in the context of the machine learning models rather than relying solely on pairwise correlation.
+
+---
+
+### 3.7 Key EDA Findings
+
+The exploratory analysis provided several important observations for the subsequent modeling stages:
+
+1. The processed dataset was structurally suitable for machine learning after the data-quality checks.
+
+2. The acoustic features exhibited different distributions, ranges, and levels of variability.
+
+3. Several features showed differences between normal and abnormal pump recordings, indicating that acoustic characteristics contain potentially useful information about operating condition.
+
+4. The feature correlation analysis revealed relationships between multiple acoustic variables, highlighting the need to consider feature redundancy during model interpretation.
+
+5. The target classes were not perfectly balanced, which was taken into consideration during model development and preprocessing.
+
+6. The combined acoustic feature set provided a reasonable basis for building a supervised classification model rather than relying on a single acoustic measurement.
+
+---
+
+### Outcome
+
+EDA established a statistical understanding of the engineered acoustic dataset and provided evidence that the extracted features contain information relevant to distinguishing normal and abnormal pump operation.
+
+The findings from this stage were then used to guide the **data preprocessing and machine learning pipeline**, including train-test splitting, feature scaling where required, and class-imbalance handling.
