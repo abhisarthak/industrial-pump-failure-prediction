@@ -318,3 +318,34 @@ The exploratory analysis provided several important observations for the subsequ
 EDA established a statistical understanding of the engineered acoustic dataset and provided evidence that the extracted features contain information relevant to distinguishing normal and abnormal pump operation.
 
 The findings from this stage were then used to guide the **data preprocessing and machine learning pipeline**, including train-test splitting, feature scaling where required, and class-imbalance handling.
+
+## ✅ 4. Data Preprocessing
+
+Before training the machine learning models, the engineered acoustic dataset was prepared using a structured preprocessing workflow. The objective was to ensure that the models received clean and appropriately transformed input data while minimizing the risk of data leakage between training and evaluation sets.
+
+This stage converted the EDA-ready dataset into a machine-learning-ready dataset for supervised classification.
+
+---
+
+### 4.1 Predictor and Target Separation
+
+The processed dataset was divided into:
+
+- **Predictor variables (`X`)** – the 18 extracted acoustic features.
+- **Target variable (`y`)** – the pump operating condition indicating whether the recording belonged to the normal or abnormal class.
+
+The target label was separated from the acoustic predictors before model training so that the models learned the relationship between the acoustic characteristics and the operating condition.
+
+The predictor set consisted of:
+
+```text
+RMS
+ZCR
+Spectral Centroid
+Spectral Bandwidth
+Spectral Roll-off
+MFCC_1
+MFCC_2
+...
+MFCC_13
+```
