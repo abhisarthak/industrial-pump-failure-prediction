@@ -1,310 +1,224 @@
 # 🚀 Project Progress
 
-This project is being developed as a production-oriented machine learning pipeline for industrial predictive maintenance. Each milestone represents a major engineering stage, transforming raw acoustic recordings into actionable insights for fault detection and predictive maintenance.
+The project has evolved from raw industrial pump acoustic recordings into an end-to-end **predictive maintenance decision-support system**, combining acoustic feature engineering, machine learning, explainable AI, economic risk analysis, and Mixed-Integer Linear Programming (MILP).
 
 ---
 
-# ✅ Milestone 1 – Project Initialization
+## ✅ 1. Project Setup & Data Validation
 
-Established a scalable and reproducible project structure following machine learning engineering best practices.
-
-### Completed
-
-- Created a modular project directory structure.
-- Configured Git and GitHub for version control.
-- Set up a Python virtual environment.
-- Installed required project dependencies.
-- Organized directories for notebooks, models, reports, results, source code, and datasets.
-- Created the end-to-end project notebook.
-
-### Outcome
-
-A professional project structure was established to support reproducible machine learning development.
+- Established a modular and reproducible Python project structure.
+- Configured Git/GitHub and a virtual environment.
+- Validated the industrial pump acoustic dataset.
+- Processed **868 acoustic recordings** from **4 pump IDs**.
+- Identified **412 normal** and **456 abnormal** recordings.
+- Verified recording integrity, sampling rate, duration, and signal readability.
 
 ---
 
-# ✅ Milestone 2 – Dataset Exploration and Validation
+## ✅ 2. Acoustic Feature Engineering
 
-Explored and validated the industrial pump acoustic dataset before beginning feature engineering.
+Converted raw acoustic recordings into structured numerical features using **Librosa**.
 
-### Completed
+### Extracted Features
 
-- Loaded the complete pump audio dataset.
-- Verified the dataset directory structure.
-- Identified all available pump IDs.
-- Counted normal and abnormal operating recordings.
-- Verified dataset consistency and integrity.
-
-### Dataset Summary
-
-| Metric | Value |
-|--------|------:|
-| Pump IDs | 4 |
-| Total Audio Recordings | 868 |
-| Normal Recordings | 412 |
-| Abnormal Recordings | 456 |
-
-### Outcome
-
-Successfully validated the dataset structure and operating condition distribution before signal processing.
-
----
-
-# ✅ Milestone 3 – Audio Inspection and Signal Validation
-
-Validated the quality and integrity of the raw acoustic recordings.
-
-### Completed
-
-- Loaded sample pump recordings using Librosa.
-- Verified sampling rate and recording duration.
-- Visualized audio waveforms.
-- Embedded an audio player within the notebook.
-- Confirmed that the recordings are readable and suitable for acoustic analysis.
-
-### Outcome
-
-Verified that the raw acoustic signals are consistent and suitable for feature engineering.
-
-
----
-
-# ✅ Milestone 4 – Acoustic Feature Engineering
-
-Converted raw pump recordings into structured numerical features suitable for machine learning.
-
-### Acoustic Features Extracted
-
-- Zero Crossing Rate (ZCR)
 - Root Mean Square (RMS) Energy
+- Zero Crossing Rate (ZCR)
 - Spectral Centroid
 - Spectral Bandwidth
 - Spectral Roll-off
-- 13 Mel-Frequency Cepstral Coefficients (MFCCs)
+- 13 MFCC features
 
 ### Completed
 
-- Built a reusable acoustic feature extraction pipeline using Librosa.
-- Processed all **868 pump recordings**.
-- Generated a structured machine learning feature dataset.
-- Exported the processed dataset as **CSV** for downstream analytics.
-- Saved the processed dataset as **Pickle** for efficient future loading.
-
-### Outcome
-
-Successfully transformed raw acoustic recordings into a structured feature dataset that forms the foundation for statistical analysis and machine learning.
-
----
-# ✅ Milestone 5 – Exploratory Data Analysis (EDA)
-
-Performed comprehensive exploratory analysis to understand the statistical properties and predictive potential of the extracted acoustic features.
-
-### Dataset Quality Assessment
-
-- Verified dataset dimensions and structure.
-- Inspected feature data types.
-- Checked for missing values.
-- Checked for duplicate records.
-
-### Statistical Analysis
-
-- Generated descriptive statistics for all acoustic features.
-- Evaluated measures of central tendency and variability.
-- Examined feature distributions.
-
-  ### Univariate Analysis
-
-- Visualized feature distributions using histograms.
-- Identified potential outliers through boxplots.
-- Measured feature skewness.
-- Evaluated feature variability.
-
-### Bivariate Analysis
-
-- Compared acoustic features across normal and abnormal pump conditions.
-- Analyzed target class distribution.
-- Evaluated feature separation using comparative boxplots.
-- Compared average feature values between operating conditions.
-
-### Correlation Analysis
-
-- Generated the correlation matrix.
-- Visualized feature relationships using a heatmap.
-- Identified highly correlated acoustic features.
-- Investigated potential feature redundancy.
-
-### Outcome
-
-The exploratory analysis confirmed that the extracted acoustic features capture meaningful differences between healthy and faulty pump operating conditions, providing a strong foundation for predictive machine learning models.
-
-
----
-# ✅ Milestone 6 – Data Preprocessing
-
-Prepare the engineered feature dataset for supervised machine learning.
-
-### Planned Tasks
-
-- Separate predictor variables and target labels.
-- Encode categorical target classes.
-- Perform stratified train-test splitting.
-- Prevent data leakage.
-- Evaluate the need for feature scaling across different algorithms.
-- Save processed datasets for reproducible model development.
-
-### Expected Outcome
-
-A clean, reproducible, and machine learning-ready dataset for model training and evaluation.
+- Built a reusable feature extraction pipeline.
+- Extracted acoustic features from all **868 recordings**.
+- Generated and exported the processed feature dataset for machine learning.
+- Performed signal-level validation and inspection.
 
 ---
 
-# ✅ Milestone 7 – Baseline Machine Learning Models
+## ✅ 3. Exploratory Data Analysis
 
-Develop baseline classification models to establish initial predictive performance.
+Performed statistical and visual analysis to understand the relationship between acoustic characteristics and pump operating conditions.
 
-### Planned Tasks
+### Analysis Performed
 
-- Train Logistic Regression.
-- Train Decision Tree.
-- Train Random Forest.
-- Evaluate using:
-  - Accuracy
+- Dataset structure and data-quality checks
+- Missing-value and duplicate checks
+- Descriptive statistics
+- Feature distributions and skewness analysis
+- Outlier analysis using boxplots
+- Normal vs. abnormal condition comparison
+- Feature correlation analysis
+- Correlation heatmaps
+
+The analysis showed meaningful differences in acoustic characteristics between normal and abnormal operating conditions, supporting their use for predictive modeling.
+
+---
+
+## ✅ 4. Machine Learning & Model Optimization
+
+Developed supervised machine learning models for pump failure prediction.
+
+### Completed
+
+- Prepared features and target labels.
+- Applied train-test splitting and preprocessing.
+- Evaluated multiple classification approaches.
+- Addressed class imbalance using **SMOTE**.
+- Compared model performance using:
   - Precision
   - Recall
-  - F1-Score
+  - F1-score
   - ROC-AUC
-- Compare baseline model performance.
-
-### Expected Outcome
-
-Identify the most promising baseline model for predictive maintenance using acoustic features.
+- Selected **Random Forest** as the primary predictive model.
+- Performed **GridSearchCV-based hyperparameter optimization**.
+- Optimized the prediction threshold to support maintenance-oriented decision making.
 
 ---
 
-# ✅ Milestone 8 – Hyperparameter Optimization
+## ✅ 5. Explainable AI
 
-Improve baseline model performance through systematic hyperparameter tuning.
+Applied **SHAP (SHapley Additive exPlanations)** to understand how acoustic features influence model predictions.
 
-### Planned Tasks
+### Completed
 
-- Perform GridSearchCV.
-- Apply Cross-Validation.
-- Optimize Random Forest parameters.
-- Compare baseline and optimized models.
-- Reduce overfitting while improving generalization.
+- Global feature importance analysis
+- SHAP summary analysis
+- Feature interaction analysis
+- Feature dependence analysis
+- Interpretation of individual model predictions
 
-### Expected Outcome
-
-An optimized predictive model capable of delivering improved classification performance on unseen pump recordings.
+This provides greater transparency into why the model assigns higher failure probabilities to specific pumps.
 
 ---
 
-# ✅ Milestone 9 – Explainable AI
+## ✅ 6. Predictive Maintenance & Risk Analysis
 
-Increase model transparency by explaining prediction behavior.
+Converted model predictions into actionable maintenance priorities.
 
-### Planned Tasks
+### Completed
 
-- Compute Feature Importance.
-- Perform SHAP analysis.
-- Generate global feature explanations.
-- Explain individual model predictions.
-- Interpret model decisions from an engineering perspective.
+- Generated failure probabilities for individual pumps.
+- Classified pumps according to risk level.
+- Created maintenance priority scores.
+- Estimated expected failure losses.
+- Incorporated maintenance costs and maintenance duration.
+- Calculated expected economic benefit for maintenance decisions.
 
-### Expected Outcome
-
-A transparent machine learning model that provides understandable and trustworthy predictions for predictive maintenance.
-
----
-
-# ✅ Milestone 10 – Predictive Maintenance Decision Framework
-
-Translate machine learning predictions into actionable maintenance recommendations.
-
-### Planned Tasks
-
-- Develop pump risk scoring.
-- Prioritize maintenance actions.
-- Estimate maintenance urgency.
-- Compare preventive and reactive maintenance strategies.
-- Analyze potential operational impact.
-
-### Expected Outcome
-
-A decision-support framework that assists maintenance teams in planning timely interventions and reducing unexpected equipment failures.
+This connects **machine learning predictions with operational and economic considerations**, rather than treating failure prediction as a standalone classification problem.
 
 ---
 
-# ✅ Milestone 11 – Deployment
+## ✅ 7. MILP-Based Maintenance Optimization
 
-Develop an interactive interface for real-world demonstration.
+Developed a **Mixed-Integer Linear Programming (MILP)** framework to select the maintenance portfolio under limited maintenance capacity.
 
-### Planned Tasks
+### Optimization Objective
 
-- Build an interactive Streamlit dashboard.
-- Display prediction results.
-- Visualize acoustic features.
-- Present model confidence and explanations.
-- Demonstrate an end-to-end predictive maintenance workflow.
+The optimization framework considers:
 
-### Expected Outcome
+- Failure probability
+- Expected failure loss
+- Maintenance cost
+- Maintenance duration
+- Risk constraints
+- Available maintenance capacity
 
-A user-friendly application that allows engineers and stakeholders to interact with the predictive maintenance system.
+### Current Optimization Result
+
+| Metric | Result |
+|---|---:|
+| Pumps Evaluated | **174** |
+| Pumps Selected | **37** |
+| Maintenance Capacity | **148 hours** |
+| Capacity Utilization | **100%** |
+| Actual Failures Available | **83** |
+| Actual Failures Covered | **36** |
+| Actual Failure Coverage | **43.37%** |
+| Expected Failure Loss | **₹33.54 lakh** |
+| Maintenance Cost | **₹2.96 lakh** |
+| Expected Net Benefit | **₹30.58 lakh** |
+| Net Benefit per Hour | **₹20,662/hour** |
+
+The optimized portfolio is compared against alternative maintenance strategies, including ML risk ranking and economic ranking.
 
 ---
-# ✅ Milestone 12 – Project Finalization
 
-Prepare the project for production-quality presentation and documentation.
+## 🚧 8. Interactive Decision-Support Dashboard
 
-### Planned Tasks
+A **Streamlit dashboard** has been developed to present the predictive maintenance results in an engineering-friendly format.
 
-- Finalize project documentation.
-- Update the README with complete workflow.
-- Organize repository structure.
-- Improve code readability and reproducibility.
-- Prepare project for portfolio presentation.
+### Dashboard Components
 
-### Expected Outcome
+- Executive maintenance KPIs
+- Recommended maintenance strategy
+- Strategy comparison
+- Pump risk profile
+- Selected maintenance portfolio
+- Expected economic benefits
+- Maintenance capacity utilization
+- Downloadable portfolio results
 
-A fully documented, production-style machine learning project demonstrating an end-to-end predictive maintenance pipeline.
+The dashboard provides a visual interface for interpreting the output of the ML and optimization pipeline.
 
 ---
 
-# 🎯 Final Project Vision
+## 🔄 9. Project Finalization
+
+Current work is focused on improving the presentation and reproducibility of the completed system.
+
+### Remaining Tasks
+
+- Finalize dashboard presentation
+- Improve README and project documentation
+- Organize repository structure
+- Clean and document reusable code
+- Prepare the project for portfolio/deployment presentation
+
+---
+
+# 🎯 End-to-End System
 
 ```text
-Industrial Pump Audio
-          │
-          ▼
-Dataset Validation
-          │
-          ▼
-Signal Inspection
-          │
-          ▼
-Acoustic Feature Engineering
-          │
-          ▼
-Exploratory Data Analysis
-          │
-          ▼
-Data Preprocessing
-          │
-          ▼
-Machine Learning Models
-          │
-          ▼
-Hyperparameter Optimization
-          │
-          ▼
-Explainable AI
-          │
-          ▼
-Predictive Maintenance Decision Framework
-          │
-          ▼
-Interactive Deployment
-          │
-          ▼
-AI-Assisted Predictive Maintenance System
+Industrial Pump Acoustic Recordings
+                │
+                ▼
+        Data Validation
+                │
+                ▼
+      Signal Inspection
+                │
+                ▼
+     Acoustic Feature Extraction
+                │
+                ▼
+          EDA & Analysis
+                │
+                ▼
+      Data Preprocessing
+                │
+                ▼
+     Machine Learning Models
+                │
+                ▼
+   Random Forest + Optimization
+                │
+                ▼
+       Failure Probability
+                │
+                ▼
+       Risk & Economic Analysis
+                │
+                ▼
+       MILP Maintenance Optimization
+                │
+                ▼
+     Optimized Maintenance Portfolio
+                │
+                ▼
+       Streamlit Dashboard
+                │
+                ▼
+ Predictive Maintenance Decision Support
 ```
