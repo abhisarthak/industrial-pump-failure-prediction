@@ -349,3 +349,111 @@ MFCC_2
 ...
 MFCC_13
 ```
+4.2 Train-Test Split
+
+The dataset was divided into training and test subsets before model development.
+
+A stratified split was used so that the relative representation of the normal and abnormal classes was maintained across the training and test datasets.
+
+This is particularly important for classification problems because an uneven distribution of classes between the training and test sets can produce misleading performance estimates.
+
+The test dataset was kept separate from model fitting and was used to evaluate how well the trained model performed on previously unseen observations.
+
+4.3 Feature Scaling
+
+The acoustic features have different numerical ranges and statistical distributions. Therefore, feature scaling was evaluated as part of the preprocessing workflow.
+
+StandardScaler was used where required to standardize the numerical predictors.
+
+Standardization transforms a feature approximately according to:
+
+z = (x - μ) / σ
+
+where:
+
+x = original feature value
+μ = mean of the feature calculated from the training data
+σ = standard deviation calculated from the training data
+
+This places the features on a comparable scale and prevents variables with larger numerical magnitudes from disproportionately influencing algorithms that are sensitive to feature scale.
+
+Importantly, the scaler was fitted using the training data and then applied to the corresponding evaluation data rather than calculating scaling parameters using the complete dataset.
+
+4.4 Class Imbalance Handling
+
+The dataset contained different numbers of normal and abnormal recordings:
+
+Class	Recordings
+Normal	412
+Abnormal	456
+
+Although the difference is not extreme, class distribution was explicitly considered during model development because predictive maintenance applications often place greater importance on correctly identifying abnormal or potentially failing equipment.
+
+SMOTE (Synthetic Minority Over-sampling Technique) was incorporated into the training workflow to address class imbalance during model development.
+
+SMOTE generates synthetic training observations for the minority class rather than simply duplicating existing observations.
+
+This allows the classifier to receive a more balanced training signal while retaining the original test distribution for evaluation.
+
+4.5 Preventing Data Leakage
+
+Avoiding data leakage was an important part of the preprocessing design.
+
+Information from the test set should not influence:
+
+Feature scaling parameters
+Synthetic sample generation
+Model fitting
+Hyperparameter selection
+
+Therefore, preprocessing operations that learn from the data were performed using the training portion of the dataset.
+
+The general workflow was:
+
+Complete Dataset
+       │
+       ▼
+Stratified Train-Test Split
+       │
+       ├──────────────────┐
+       ▼                  ▼
+   Training Set        Test Set
+       │                  │
+       ▼                  │
+   Preprocessing           │
+       │                  │
+       ├── Scaling         │
+       └── SMOTE           │
+       │                  │
+       ▼                  │
+ Model Training            │
+       │                  │
+       └──────────┐        │
+                  ▼        ▼
+               Trained Model
+                    │
+                    ▼
+              Test Evaluation
+
+This separation helps ensure that the reported model performance reflects predictions on data that was not used to construct the training process.
+
+4.6 Reproducibility
+
+Randomized operations used during preprocessing and model development were controlled using fixed random states where appropriate.
+
+This allows the workflow to be reproduced and makes it easier to compare different models and preprocessing configurations consistently.
+
+The preprocessing stage was also integrated with the subsequent machine learning workflow so that the same transformation logic could be applied consistently during model training and evaluation.
+
+Outcome
+
+The acoustic feature dataset was converted into a structured machine-learning-ready format through:
+
+Predictor-target separation
+Stratified train-test splitting
+Feature scaling where required
+Class-imbalance handling using SMOTE
+Leakage-aware preprocessing
+Reproducible processing
+
+The resulting training data was then used for baseline machine learning model development and comparative evaluation.
