@@ -72,3 +72,87 @@ At the end of this stage:
 - The recordings were confirmed to be suitable for acoustic signal inspection and feature extraction.
 
 This established the data and engineering foundation for the next stage: **converting the raw acoustic signals into machine-learning-ready features**.
+
+## ✅ 2. Acoustic Feature Engineering
+
+The raw pump recordings contain acoustic signals in the form of time-series audio data. Machine learning models cannot directly use these raw audio signals efficiently as structured predictors, so the next stage was to transform the recordings into meaningful numerical characteristics that describe the acoustic behavior of the pumps.
+
+The objective of this stage was to capture different aspects of the pump sound, including signal energy, temporal behavior, and frequency characteristics, and convert them into a structured feature matrix suitable for statistical analysis and machine learning.
+
+### Feature Extraction Pipeline
+
+A reusable acoustic feature extraction pipeline was developed using **Librosa**. Each of the **868 audio recordings** was loaded and processed individually, and a fixed set of acoustic features was calculated for every recording.
+
+The resulting feature representation contains:
+
+- **5 time/frequency-domain acoustic features**
+- **13 MFCC features**
+- **18 numerical predictors in total**
+
+This transformed the raw audio dataset into a structured tabular dataset that could be used in the subsequent EDA and machine learning stages.
+
+---
+
+### Extracted Acoustic Features
+
+#### 1. Root Mean Square (RMS) Energy
+
+RMS measures the average energy or amplitude of the acoustic signal.
+
+It provides an indication of how strong the recorded pump sound is over time. Changes in vibration, mechanical activity, or abnormal operating conditions can alter the energy characteristics of the signal.
+
+**Purpose:** Capture the overall energy level of the pump's acoustic signal.
+
+---
+
+#### 2. Zero Crossing Rate (ZCR)
+
+Zero Crossing Rate measures how frequently the audio signal changes sign, or crosses the zero-amplitude axis.
+
+It provides information about the temporal characteristics of the signal and can help distinguish signals with different levels of rapid oscillation or noisiness.
+
+**Purpose:** Capture changes in the temporal characteristics of the acoustic signal.
+
+---
+
+#### 3. Spectral Centroid
+
+Spectral Centroid represents the weighted mean frequency of the signal's frequency spectrum.
+
+It can be interpreted as an indicator of where the majority of the signal's spectral energy is concentrated. Changes in pump operating conditions can result in shifts in this frequency distribution.
+
+**Purpose:** Capture the overall spectral position or "center of mass" of the pump sound.
+
+---
+
+#### 4. Spectral Bandwidth
+
+Spectral Bandwidth measures the spread of frequencies around the spectral centroid.
+
+A narrow bandwidth indicates that the signal is concentrated around a smaller frequency range, while a wider bandwidth indicates a more dispersed frequency distribution.
+
+**Purpose:** Capture the spread and variability of the pump's frequency content.
+
+---
+
+#### 5. Spectral Roll-off
+
+Spectral Roll-off identifies the frequency below which a specified proportion of the total spectral energy is contained.
+
+This feature helps describe the distribution of energy between lower and higher frequency components of the acoustic signal.
+
+**Purpose:** Capture changes in the high-frequency characteristics of pump sound.
+
+---
+
+#### 6. Mel-Frequency Cepstral Coefficients (MFCCs)
+
+Thirteen MFCCs were extracted from each recording.
+
+MFCCs provide a compact representation of the spectral characteristics of an audio signal by representing its frequency structure on the Mel scale. They are widely used for characterizing audio patterns and were included here to capture additional information from the spectral shape of pump recordings.
+
+The extracted coefficients were represented as:
+
+```text
+MFCC_1, MFCC_2, ..., MFCC_13
+```
