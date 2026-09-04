@@ -1008,3 +1008,32 @@ For example:
 A higher probability indicates that the model considers the pump more likely to exhibit the abnormal condition represented in the dataset.
 
 These probability estimates form the primary predictive input to the risk-analysis stage.
+
+8.2 Risk Classification
+
+The predicted failure probabilities were converted into risk categories to make the model output easier to interpret from a maintenance perspective.
+
+Pumps were categorized according to their estimated level of failure risk.
+
+This allows the maintenance system to distinguish between pumps requiring relatively low attention and pumps that may require more immediate investigation or intervention.
+
+The risk classification provides a practical layer between the continuous machine learning probability and the eventual maintenance decision.
+
+8.3 Maintenance Priority
+
+Failure probability alone does not necessarily determine the best maintenance action.
+
+For example, two pumps may have similar failure probabilities but very different consequences if they fail.
+
+Therefore, maintenance prioritization considers both:
+
+Probability of Failure
+          +
+Potential Failure Impact
+          │
+          ▼
+      Maintenance Priority
+
+A priority framework was developed to rank pumps according to their maintenance relevance.
+
+This allows the system to move beyond a simple probability ranking and incorporate the potential operational and economic consequences associated with equipment failure.
