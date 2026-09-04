@@ -969,3 +969,42 @@ The Explainable AI stage provided a transparent view of the optimized Random For
 - Individual prediction explanations.
 
 SHAP therefore provided an interpretability layer between the machine learning prediction and the subsequent risk-based maintenance decision framework.
+
+## ✅ 8. Predictive Maintenance & Risk Analysis
+
+The machine learning model provides a failure probability for each pump recording. However, a predictive maintenance system requires more than simply classifying equipment as normal or abnormal.
+
+The next stage therefore converts the model predictions into an actionable **risk and economic decision framework**.
+
+The objective is to identify which pumps require greater maintenance attention by combining:
+
+- Predicted failure probability
+- Actual operating condition
+- Failure-related economic impact
+- Maintenance requirements
+- Risk severity
+- Expected economic benefit
+
+This creates a bridge between the machine learning model and the subsequent optimization problem.
+
+---
+
+### 8.1 Failure Probability
+
+The optimized Random Forest generates a probability estimate for the abnormal/failure condition for each pump.
+
+Instead of representing the model output only as:
+
+```text
+Normal / Abnormal
+```
+
+each pump receives a continuous failure-risk estimate.
+For example:
+- Pump A → 0.18
+- Pump B → 0.57
+- Pump C → 0.91
+
+A higher probability indicates that the model considers the pump more likely to exhibit the abnormal condition represented in the dataset.
+
+These probability estimates form the primary predictive input to the risk-analysis stage.
