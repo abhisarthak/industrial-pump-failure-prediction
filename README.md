@@ -526,3 +526,99 @@ Leakage-aware preprocessing
 Reproducible processing
 
 The resulting training data was then used for baseline machine learning model development and comparative evaluation.
+
+
+## ✅ 5. Baseline Machine Learning Models
+
+After preprocessing the acoustic feature dataset, multiple supervised machine learning classification models were developed to determine whether the extracted acoustic characteristics could be used to distinguish between normal and abnormal pump operating conditions.
+
+Rather than immediately selecting a single algorithm, several baseline models were trained and evaluated using the same underlying feature set. This provided a consistent basis for comparing their predictive behavior and identifying a suitable model for the subsequent predictive maintenance pipeline.
+
+---
+
+### 5.1 Classification Objective
+
+The machine learning task was formulated as a **binary classification problem**.
+
+Given the acoustic feature vector of a pump recording, the model predicts its operating condition:
+
+```text
+Acoustic Features
+       │
+       ▼
+Machine Learning Model
+       │
+       ▼
+Predicted Operating Condition
+       │
+       ├── Normal
+       │
+       └── Abnormal
+```
+
+The model predictions were later converted into failure probabilities, which became an important input to the risk analysis and maintenance optimization stages.
+
+5.2 Baseline Models
+
+Multiple classification algorithms were evaluated to establish baseline predictive performance.
+
+The models considered included:
+
+## Logistic Regression
+
+Logistic Regression was used as a relatively simple linear baseline.
+
+It provides a useful reference point for determining whether the acoustic features contain approximately linear relationships with the target class.
+
+It also provides interpretable probability-based predictions that can be compared with more complex models.
+
+## Decision Tree
+
+A Decision Tree was evaluated to capture non-linear relationships and feature interactions.
+
+Unlike a linear model, a decision tree can divide the feature space through a sequence of decision rules, allowing it to model more complex relationships between acoustic characteristics and pump operating conditions.
+
+## Random Forest
+
+Random Forest was evaluated as an ensemble tree-based approach.
+
+It combines predictions from multiple decision trees and can capture non-linear relationships and interactions among the acoustic features.
+
+This makes it particularly suitable for a feature set containing different types of acoustic measurements, including energy, temporal, spectral, and MFCC-based features.
+
+5.3 Model Evaluation
+
+The baseline models were evaluated using multiple classification metrics rather than relying only on accuracy.
+
+The evaluation included:
+
+- Precision
+- Recall
+- F1-Score
+- ROC-AUC
+
+These metrics provide different perspectives on model behavior.
+
+# Precision
+
+Precision measures the proportion of predicted abnormal recordings that were actually abnormal.
+
+A higher precision means that fewer normal recordings are incorrectly flagged as abnormal.
+
+# Recall
+
+Recall measures the proportion of actual abnormal recordings that were successfully identified by the model.
+
+Recall is particularly important in predictive maintenance because failing to identify an abnormal pump can result in an unexpected equipment failure.
+
+# F1-Score
+
+F1-score combines precision and recall into a single metric using their harmonic mean.
+
+It provides a balanced measure when both false positives and false negatives are important.
+
+# ROC-AUC
+
+ROC-AUC measures the model's ability to distinguish between the two operating conditions across different classification thresholds.
+
+It was also useful because the eventual maintenance decision framework required probability-based risk assessment, rather than relying solely on a fixed class prediction.
