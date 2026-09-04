@@ -801,3 +801,171 @@ The optimized model provides:
 - A foundation for explainable AI using SHAP.
 
 The optimized model was then carried forward to the Explainable AI stage to understand which acoustic characteristics were driving its predictions.
+
+## ✅ 7. Explainable AI (SHAP)
+
+Machine learning models can provide accurate predictions while remaining difficult to interpret. For a predictive maintenance application, understanding **why a pump is assigned a higher failure probability** is important because maintenance decisions should not depend entirely on an unexplained model output.
+
+To improve model transparency, **SHAP (SHapley Additive exPlanations)** was applied to the optimized Random Forest model.
+
+The objective of this stage was to understand how individual acoustic features contribute to the model's predictions at both the overall dataset level and the individual pump level.
+
+---
+
+### 7.1 Why Explainability Was Required
+
+The predictive model uses multiple acoustic characteristics simultaneously, including energy, temporal, spectral, and MFCC-based features.
+
+A prediction such as:
+
+```text
+Pump ID → Failure Probability = 0.91
+```
+
+# Conceptually:
+
+Acoustic Features
+       │
+       ▼
+Optimized Random Forest
+       │
+       ▼
+Failure Probability
+       │
+       ▼
+SHAP Explanation
+       │
+       ├── Feature contribution
+       ├── Direction of contribution
+       └── Relative importance
+
+This makes the model output easier to investigate and interpret.
+
+7.2 SHAP Feature Importance
+
+A global SHAP analysis was performed to understand which acoustic features had the greatest influence on the model across the dataset.
+
+The analysis examined the magnitude of SHAP values associated with the different acoustic features.
+
+Features with larger absolute SHAP values have a greater influence on the model's predictions, while features with smaller values generally have less influence.
+
+This provides a model-specific measure of feature importance rather than relying only on simple statistical relationships such as correlation.
+
+7.3 Direction of Feature Influence
+
+SHAP analysis was also used to understand not only which features were important, but also how their values influenced predictions.
+
+A feature can contribute towards:
+- Higher predicted failure risk
+             or
+- Lower predicted failure risk
+
+depending on its value and its interaction with the other features.
+
+This distinction is important because a feature can be statistically related to the target without necessarily having a simple positive or negative relationship with the model's prediction.
+
+7.4 SHAP Summary Analysis
+
+A SHAP summary analysis was generated to provide a global view of model behavior.
+
+The summary considers:
+
+- Feature importance across observations.
+- Distribution of feature contributions.
+- Direction of contribution.
+- Variation in feature influence across different recordings.
+
+This allows the model to be interpreted at the dataset level rather than examining individual predictions independently.
+
+7.5 Feature Interaction Analysis
+
+Interactions between acoustic features were also investigated using SHAP.
+
+This is useful because pump acoustic behavior is not necessarily determined by one measurement in isolation.
+
+For example, the predictive contribution of one acoustic feature may change depending on the value of another feature.
+
+The interaction analysis therefore provides additional insight into whether the model is relying on combinations of acoustic characteristics when assigning failure risk.
+
+7.6 SHAP Dependence Analysis
+
+SHAP dependence analysis was used to examine the relationship between individual feature values and their corresponding contribution to model predictions.
+
+This helps investigate questions such as:
+
+- How does increasing or decreasing a feature affect its contribution?
+- Are there regions where the feature has a stronger influence?
+- Does the relationship appear approximately linear or non-linear?
+- Do interactions with other features affect the contribution?
+
+This provides a more detailed interpretation than a simple feature-ranking plot.
+
+7.7 Individual Prediction Interpretation
+
+SHAP can also be used to explain individual pump predictions.
+
+For a particular pump, the model's predicted failure probability can be examined together with the features that contributed most strongly to that prediction.
+
+Conceptually:
+Pump Acoustic Profile
+          │
+          ▼
+  Failure Probability
+          │
+          ▼
+   Individual SHAP
+      Explanation
+          │
+          ├── Factors increasing risk
+          └── Factors reducing risk
+
+This creates a pathway for moving from:
+
+"The model predicts high risk"
+
+to:
+
+"The model predicts high risk because of the combined contribution of specific acoustic characteristics."
+
+7.8 From Prediction to Decision
+
+SHAP was used primarily for model interpretation, while the actual maintenance decision was developed in subsequent stages.
+
+The overall logic is:
+
+Acoustic Recording
+        │
+        ▼
+Feature Extraction
+        │
+        ▼
+Random Forest
+        │
+        ▼
+Failure Probability
+        │
+        ├──────────────► SHAP
+        │                 │
+        │                 ▼
+        │          Model Explanation
+        │
+        ▼
+Risk & Economic Analysis
+        │
+        ▼
+Maintenance Optimization
+
+This separation is important: SHAP explains the predictive model, while the later risk and optimization framework determines how those predictions can be converted into maintenance actions.
+
+# Outcome
+
+The Explainable AI stage provided a transparent view of the optimized Random Forest model by examining:
+
+- Global feature importance.
+- Individual feature contributions.
+- Direction of feature influence.
+- Feature interactions.
+- Feature-value versus SHAP relationships.
+- Individual prediction explanations.
+
+SHAP therefore provided an interpretability layer between the machine learning prediction and the subsequent risk-based maintenance decision framework.
