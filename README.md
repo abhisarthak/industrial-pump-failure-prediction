@@ -1068,3 +1068,28 @@ Potential Loss from Not Maintaining
             Maintenance Cost
 
 This comparison is necessary because a high-risk pump is not automatically the optimal maintenance candidate if the intervention requires disproportionate resources.
+
+8.6 Expected Net Benefit
+
+The expected economic benefit of maintenance was calculated by comparing the expected failure loss with the corresponding maintenance cost.
+
+The project uses:
+
+Expected Net Benefit = Expected Failure Loss − Maintenance Cost
+
+A positive expected net benefit indicates that, under the model assumptions, the expected avoided failure loss is greater than the estimated maintenance cost.
+
+This provides an economic basis for prioritizing maintenance interventions.
+
+8.7 Benefit per Maintenance Hour
+
+Maintenance resources are constrained not only by cost but also by available workforce and equipment capacity.
+
+Therefore, the framework also calculates the economic benefit generated per maintenance hour.
+
+Conceptually:
+Benefit per Hour = Expected Net Benefit ÷ Maintenance Hours
+
+This metric helps compare maintenance candidates when available maintenance time is limited.
+
+For example, two pumps may both have positive expected benefits, but the pump generating greater expected benefit per maintenance hour may provide better utilization of a constrained maintenance workforce.
