@@ -385,6 +385,7 @@ EDA established a statistical understanding of the engineered acoustic dataset a
 
 The findings from this stage were then used to guide the **data preprocessing and machine learning pipeline**, including train-test splitting, feature scaling where required, and class-imbalance handling.
 
+
 ## ✅ 4. Data Preprocessing
 
 Before training the machine learning models, the engineered acoustic dataset was prepared using a structured preprocessing workflow. The objective was to ensure that the models received clean and appropriately transformed input data while minimizing the risk of data leakage between training and evaluation sets.
@@ -449,9 +450,11 @@ Importantly, the scaler was fitted using the training data and then applied to t
 
 The dataset contained different numbers of normal and abnormal recordings:
 
-Class	Recordings
-Normal	412
-Abnormal	456
+| Class    | Recordings |
+| -------- | ---------: |
+| Normal   |    **412** |
+| Abnormal |    **456** |
+
 
 Although the difference is not extreme, class distribution was explicitly considered during model development because predictive maintenance applications often place greater importance on correctly identifying abnormal or potentially failing equipment.
 
