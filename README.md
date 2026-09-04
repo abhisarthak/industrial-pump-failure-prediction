@@ -1037,3 +1037,34 @@ Potential Failure Impact
 A priority framework was developed to rank pumps according to their maintenance relevance.
 
 This allows the system to move beyond a simple probability ranking and incorporate the potential operational and economic consequences associated with equipment failure.
+
+8.4 Expected Failure Loss
+
+The predicted failure probability was combined with the estimated failure cost to calculate the Expected Failure Loss for each pump.
+
+Conceptually:
+Expected Failure Loss = Failure Probability × Failure Cost
+
+For example, a pump with a high probability of failure and a high failure cost will have a substantially greater expected loss than a pump with the same probability but a lower failure consequence.
+
+8.5 Maintenance Cost
+
+The economic model also incorporates the cost associated with performing maintenance.
+
+Maintenance cost may depend on the resources required to intervene on a particular pump.
+
+The framework therefore distinguishes between:
+
+Potential Loss from Not Maintaining
+                  │
+                  ▼
+          Expected Failure Loss
+
+                  versus
+
+          Cost of Intervention
+                  │
+                  ▼
+            Maintenance Cost
+
+This comparison is necessary because a high-risk pump is not automatically the optimal maintenance candidate if the intervention requires disproportionate resources.
