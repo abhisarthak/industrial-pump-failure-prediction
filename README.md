@@ -658,3 +658,146 @@ The model was therefore carried forward to the next stage for systematic hyperpa
 The baseline modeling stage established a comparative machine learning benchmark for pump operating-condition classification.
 
 Multiple classification approaches were evaluated using precision, recall, F1-score, and ROC-AUC. Random Forest was selected as the primary predictive model, providing the foundation for the subsequent hyperparameter optimization, probability-based risk assessment, explainable AI, and maintenance decision framework.
+
+## ✅ 6. Hyperparameter Optimization
+
+After comparing the baseline classification models, **Random Forest** was selected as the primary predictive model. The next stage focused on improving its performance and controlling model complexity through systematic hyperparameter optimization.
+
+The objective was to identify a Random Forest configuration that provides a strong balance between predictive performance and generalization on unseen pump recordings.
+
+---
+
+### 6.1 Why Hyperparameter Optimization?
+
+A Random Forest model contains several hyperparameters that control how individual decision trees are constructed and how the ensemble behaves.
+
+Examples include:
+
+- Number of trees in the forest
+- Maximum depth of individual trees
+- Minimum number of samples required for a node split
+- Minimum number of samples required at a leaf
+- Number of features considered during each split
+
+Using arbitrary parameter values may result in an underfitted or overfitted model.
+
+Therefore, the model configuration was optimized systematically rather than relying only on default Random Forest settings.
+
+---
+
+### 6.2 GridSearchCV
+
+**GridSearchCV** from Scikit-learn was used to evaluate different combinations of Random Forest hyperparameters.
+
+A predefined parameter grid was constructed containing multiple candidate values for the selected hyperparameters.
+
+The optimization process evaluated these combinations using cross-validation on the training data.
+
+Conceptually, the process followed:
+
+```text
+Training Data
+      │
+      ▼
+Candidate Hyperparameter Combinations
+      │
+      ▼
+Cross-Validation
+      │
+      ├── Model Configuration 1
+      ├── Model Configuration 2
+      ├── Model Configuration 3
+      ├── ...
+      └── Model Configuration N
+      │
+      ▼
+Compare Validation Performance
+      │
+      ▼
+Select Best Configuration
+      │
+      ▼
+Optimized Random Forest
+```
+This provides a more systematic approach to model tuning than manually selecting parameters.
+
+6.3 Cross-Validation
+
+Cross-validation was used during hyperparameter optimization to evaluate how consistently each candidate model configuration performed across different subsets of the training data.
+
+Rather than relying on a single training-validation split, the training data was repeatedly divided into training and validation portions.
+
+This helps reduce the influence of any particular split and provides a more robust estimate of model performance during the parameter-selection process.
+
+The held-out test data remained separate from this optimization process and was reserved for final evaluation.
+
+6.4 Optimization Objective
+
+The hyperparameter search was designed to identify a configuration that provided strong classification performance while maintaining good generalization.
+
+Model configurations were compared using the selected evaluation criterion from the cross-validation process.
+
+The optimization considered the trade-off between:
+
+- Predictive performance
+- Model complexity
+- Generalization
+- Ability to distinguish abnormal pump conditions
+
+The best-performing configuration was then used to construct the optimized Random Forest model.
+
+6.5 Optimized Random Forest
+
+The best hyperparameter configuration identified through GridSearchCV was used to train the optimized Random Forest classifier.
+
+The optimized model was subsequently evaluated on the held-out test data.
+
+This ensured that the final evaluation represented the model's performance on observations that were not used during hyperparameter selection.
+
+The optimized model also generated failure probabilities for individual pump recordings. These probabilities became an important input to the later risk-scoring and economic decision framework.
+
+6.6 Probability-Based Prediction
+
+Instead of using only a binary prediction such as:
+- Normal → 0
+- Abnormal → 1
+the optimized Random Forest was used to obtain a probability estimate for the abnormal/failure condition.
+
+For example:
+- Pump A → Failure Probability = 0.18
+- Pump B → Failure Probability = 0.64
+- Pump C → Failure Probability = 0.91
+
+These probability estimates provide a more useful representation for predictive maintenance because pumps can be ranked according to their estimated risk rather than being treated simply as "failed" or "not failed."
+
+The probability output was subsequently used in:
+
+- Risk classification
+- Maintenance prioritization
+- Expected failure-loss calculation
+- Economic modeling
+- MILP-based maintenance optimization
+
+6.7 Prediction Threshold Optimization
+
+The default classification threshold was also evaluated from a maintenance perspective.
+
+Instead of automatically treating a probability of 0.50 as the boundary between normal and abnormal conditions, different probability thresholds were considered to understand the trade-off between precision and recall.
+
+The selected threshold was used to generate the final classification decisions for the predictive maintenance workflow.
+
+This is important because the operational cost of missing a potentially failing pump can be substantially different from the cost of investigating a pump that turns out to be healthy.
+
+# Outcome
+
+The hyperparameter optimization stage produced an optimized Random Forest predictive model and established a probability-based prediction framework for the maintenance system.
+
+The optimized model provides:
+
+- Improved and systematically tuned predictive performance.
+- Probability estimates for individual pump recordings.
+- A configurable decision threshold.
+- A model suitable for downstream risk and economic analysis.
+- A foundation for explainable AI using SHAP.
+
+The optimized model was then carried forward to the Explainable AI stage to understand which acoustic characteristics were driving its predictions.
