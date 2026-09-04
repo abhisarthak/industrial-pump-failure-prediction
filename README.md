@@ -156,6 +156,72 @@ The extracted coefficients were represented as:
 ```text
 MFCC_1, MFCC_2, ..., MFCC_13
 ```
+## Feature Summary
+
+| Feature Group | Features                      | Number of Features |
+| ------------- | ----------------------------- | -----------------: |
+| Energy        | RMS                           |                  1 |
+| Temporal      | ZCR                           |                  1 |
+| Spectral      | Centroid, Bandwidth, Roll-off |                  3 |
+| Cepstral      | MFCCs                         |                 13 |
+| **Total**     |                               |             **18** |
+
+## Processing Workflow
+
+Each recording followed the same feature extraction procedure to maintain consistency across the dataset.
+
+Raw Audio Recording
+        │
+        ▼
+Load Audio Signal
+        │
+        ▼
+Signal Processing
+        │
+        ├── RMS Energy
+        ├── Zero Crossing Rate
+        ├── Spectral Centroid
+        ├── Spectral Bandwidth
+        ├── Spectral Roll-off
+        └── 13 MFCCs
+        │
+        ▼
+18-Dimensional Feature Vector
+        │
+        ▼
+Structured Feature Dataset
+
+Applying the same extraction procedure to every recording ensures that the resulting feature vectors have a consistent structure and can be directly compared across operating conditions.
+
+## Dataset Transformation
+The feature extraction stage converted the original audio recordings into a tabular machine-learning dataset.
+
+868 Raw Audio Recordings
+          │
+          ▼
+Acoustic Feature Extraction
+          │
+          ▼
+868 Samples × 18 Acoustic Features
+          │
+          ▼
+Machine-Learning-Ready Dataset
+
+The processed feature dataset was exported in CSV format for analysis and downstream machine learning workflows. A Pickle version was also saved to allow efficient loading of the processed data during subsequent experimentation.
+
+## Outcome
+
+The raw acoustic recordings were successfully transformed into a structured dataset containing 18 acoustic features per recording.
+
+This feature representation provides multiple perspectives on pump acoustic behavior:
+
+- Signal energy through RMS
+- Temporal characteristics through ZCR
+- Frequency distribution through spectral features
+- Detailed spectral patterns through MFCCs
+
+The resulting dataset forms the foundation for the next stage, Exploratory Data Analysis (EDA), where these features are statistically and visually examined to determine their relationship with normal and abnormal pump operating conditions.
+
 ## ✅ 3. Exploratory Data Analysis (EDA)
 
 After converting the raw acoustic recordings into structured numerical features, Exploratory Data Analysis (EDA) was performed to understand the statistical behavior of the dataset and investigate whether the extracted acoustic characteristics differ between normal and abnormal pump operating conditions.
