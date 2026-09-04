@@ -622,3 +622,39 @@ It provides a balanced measure when both false positives and false negatives are
 ROC-AUC measures the model's ability to distinguish between the two operating conditions across different classification thresholds.
 
 It was also useful because the eventual maintenance decision framework required probability-based risk assessment, rather than relying solely on a fixed class prediction.
+
+
+5.4 Model Comparison
+
+The models were evaluated using the same feature representation and preprocessing workflow to make the comparison meaningful.
+
+The comparison focused on:
+
+- Predictive performance
+- Ability to identify abnormal conditions
+- Generalization to unseen recordings
+- Probability-based predictions
+- Suitability for downstream predictive maintenance decisions
+
+The baseline comparison identified Random Forest as the most suitable primary model for the subsequent stages of the project.
+
+5.5 Why Random Forest Was Selected
+
+Random Forest was selected because it provided a strong combination of predictive capability and suitability for the structure of the acoustic feature dataset.
+
+The model can:
+
+- Capture non-linear relationships between acoustic features and operating conditions.
+- Model interactions between different acoustic characteristics.
+- Handle heterogeneous feature types within the same feature space.
+- Provide feature-level importance information.
+- Produce probability estimates that can be used for downstream risk scoring.
+- Serve as a suitable foundation for explainability using SHAP.
+
+The model was therefore carried forward to the next stage for systematic hyperparameter optimization.
+
+# Outcome
+
+The baseline modeling stage established a comparative machine learning benchmark for pump operating-condition classification.
+
+Multiple classification approaches were evaluated using precision, recall, F1-score, and ROC-AUC. Random Forest was selected as the primary predictive model, providing the foundation for the subsequent hyperparameter optimization, probability-based risk assessment, explainable AI, and maintenance decision framework.
