@@ -639,6 +639,15 @@ The evaluation included:
 - F1-Score
 - ROC-AUC
 
+Confusion matrices were also examined to understand the distribution
+of correct and incorrect predictions across the normal and abnormal classes.
+
+<img width="2184" height="623" alt="baseline_confusion_matrices" src="https://github.com/user-attachments/assets/eb5ca047-9f87-4d80-81e0-904f33a2a511" />
+
+The confusion matrices provide a direct comparison of the classification
+behavior of Logistic Regression, Decision Tree, and Random Forest across
+normal and abnormal pump recordings.
+
 These metrics provide different perspectives on model behavior.
 
 # Precision
