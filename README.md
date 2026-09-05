@@ -1270,3 +1270,68 @@ Expected Failure Loss − Maintenance Cost
 These quantities provide an economic basis for deciding which maintenance interventions are more valuable.
 
 The optimization therefore seeks a maintenance portfolio that provides a strong expected economic return while satisfying the operational constraints.
+
+9.6 Maintenance Portfolio Selection
+
+The MILP model evaluates the available pump candidates simultaneously rather than making an independent decision for each pump.
+
+The resulting solution identifies a portfolio of pumps that can be maintained within the available maintenance capacity.
+
+For the current optimization scenario:
+
+| Metric                    | MILP Result |
+| ------------------------- | ----------: |
+| Total Pumps Evaluated     |     **174** |
+| Pumps Selected            |      **37** |
+| Maintenance Hours         |     **148** |
+| Capacity Utilization      |    **100%** |
+| Actual Failures Available |      **83** |
+| Actual Failures Covered   |      **36** |
+| Actual Failure Coverage   |  **43.37%** |
+
+The selected portfolio therefore represents a constrained maintenance plan rather than simply the top 37 pumps according to one individual ranking criterion.
+
+9.7 Economic Performance
+
+The optimized maintenance portfolio was evaluated using the economic framework developed in the previous stage.
+
+For the selected portfolio:
+
+| Economic Metric       |           Result |
+| --------------------- | ---------------: |
+| Expected Failure Loss |  **₹33.54 lakh** |
+| Maintenance Cost      |   **₹2.96 lakh** |
+| Expected Net Benefit  |  **₹30.58 lakh** |
+| Net Benefit per Hour  | **₹20,662/hour** |
+
+The expected net benefit is calculated as:
+₹33.54 lakh − ₹2.96 lakh
+=
+₹30.58 lakh
+
+This represents the model-estimated economic benefit of the selected maintenance portfolio under the project's assumptions. It should not be interpreted as realized or guaranteed financial savings.
+
+9.8 Strategy Comparison
+
+The MILP solution was compared with alternative maintenance selection approaches to understand the value of incorporating optimization into the decision process.
+
+The strategies considered were:
+
+- ML Risk Ranking
+  Select pumps primarily according to their predicted failure risk.
+- Economic Ranking
+  Prioritize pumps according to their expected economic benefit.
+- Risk-Constrained MILP
+  Select the maintenance portfolio while simultaneously considering risk, economic value,   maintenance requirements, and capacity constraints.
+
+The current comparison is:
+
+| Strategy                  | Pumps Selected | Maintenance Hours | Actual Failures Covered | Failure Coverage | Expected Net Benefit | Net Benefit / Hour |
+| ------------------------- | -------------: | ----------------: | ----------------------: | ---------------: | -------------------: | -----------------: |
+| ML Risk Ranking           |             37 |               124 |                      37 |           44.58% |          ₹19.32 lakh |            ₹15,579 |
+| Economic Ranking          |             32 |               148 |                      32 |           38.55% |          ₹17.67 lakh |            ₹11,936 |
+| **Risk-Constrained MILP** |         **37** |           **148** |                  **36** |       **43.37%** |      **₹30.58 lakh** |        **₹20,662** |
+
+The comparison demonstrates that the MILP framework provides a substantially higher model-estimated expected net benefit under the current economic assumptions.
+
+The MILP solution does not necessarily maximize every individual metric. For example, the ML risk-ranking strategy covers slightly more observed failures in this evaluation. Instead, the purpose of MILP is to optimize the overall maintenance decision under multiple constraints and objectives.
