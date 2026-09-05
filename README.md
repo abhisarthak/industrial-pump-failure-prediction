@@ -1335,3 +1335,66 @@ The current comparison is:
 The comparison demonstrates that the MILP framework provides a substantially higher model-estimated expected net benefit under the current economic assumptions.
 
 The MILP solution does not necessarily maximize every individual metric. For example, the ML risk-ranking strategy covers slightly more observed failures in this evaluation. Instead, the purpose of MILP is to optimize the overall maintenance decision under multiple constraints and objectives.
+
+9.9 Optimization Workflow
+
+The complete optimization process can be summarized as:
+
+Pump Acoustic Recordings
+          │
+          ▼
+Acoustic Feature Extraction
+          │
+          ▼
+Random Forest Prediction
+          │
+          ▼
+Failure Probability
+          │
+          ▼
+Risk Assessment
+          │
+          ▼
+Failure Cost + Maintenance Cost
+          │
+          ▼
+Expected Failure Loss
+          │
+          ▼
+Expected Net Benefit
+          │
+          ▼
+Maintenance Hours & Risk Constraints
+          │
+          ▼
+        MILP Model
+          │
+          ▼
+Optimal Maintenance Portfolio
+          │
+          ▼
+Economic & Operational Evaluation
+
+9.10 Decision-Support Interpretation
+
+The key advantage of the MILP framework is that it changes the role of machine learning predictions.
+
+The Random Forest does not directly decide which pump should be maintained.
+
+Instead:
+
+Machine Learning
+      ↓
+Predicts Failure Risk
+
+Risk & Economic Model
+      ↓
+Quantifies Consequences
+
+MILP Optimization
+      ↓
+Selects Maintenance Portfolio
+
+This creates a separation between prediction and decision-making.
+
+The machine learning model estimates what may happen, while the optimization model determines what action should be taken given the available resources and project constraints.
