@@ -1398,3 +1398,13 @@ Selects Maintenance Portfolio
 This creates a separation between prediction and decision-making.
 
 The machine learning model estimates what may happen, while the optimization model determines what action should be taken given the available resources and project constraints.
+
+Outcome
+
+The MILP stage transformed individual pump-level predictions into an optimized maintenance portfolio.
+
+For the current scenario, the model selected:
+
+37 pumps using 148 available maintenance hours, producing a model-estimated ₹30.58 lakh expected net benefit and 43.37% coverage of observed failures.
+
+The resulting portfolio provides the final decision output of the analytical pipeline and serves as the primary dataset for the interactive Streamlit decision-support dashboard.
