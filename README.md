@@ -669,6 +669,12 @@ F1-score combines precision and recall into a single metric using their harmonic
 It provides a balanced measure when both false positives and false negatives are important.
 
 # ROC-AUC
+<img width="691" height="546" alt="roc_curve_comparison" src="https://github.com/user-attachments/assets/03bde317-c7a7-4427-b7d9-e78f850acd85" />
+
+The ROC curves compare the ability of the three baseline models to
+distinguish between normal and abnormal pump conditions across different
+classification thresholds. The corresponding AUC values provide a
+threshold-independent measure of discrimination performance.
 
 ROC-AUC measures the model's ability to distinguish between the two operating conditions across different classification thresholds.
 
@@ -808,6 +814,21 @@ This ensured that the final evaluation represented the model's performance on ob
 The optimized model also generated failure probabilities for individual pump recordings. These probabilities became an important input to the later risk-scoring and economic decision framework.
 
 6.6 Probability-Based Prediction
+
+The default classification threshold was evaluated from a maintenance
+perspective. Different probability thresholds were examined to understand
+the trade-off between precision, recall, and F1-score.
+
+<img width="846" height="546" alt="threshold_tradeoff" src="https://github.com/user-attachments/assets/6bf33656-2847-4dcc-a3a6-d0e05f784408" />
+
+The figure shows how precision, recall, and F1-score change as the
+classification threshold is varied. Increasing the threshold generally
+reduces the number of pumps classified as abnormal, increasing precision
+while reducing recall.
+
+The selected threshold was therefore determined based on the desired
+balance between correctly identifying abnormal pumps and limiting
+unnecessary maintenance alerts.
 
 Instead of using only a binary prediction such as:
 - Normal → 0
