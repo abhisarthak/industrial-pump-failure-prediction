@@ -1093,3 +1093,63 @@ Benefit per Hour = Expected Net Benefit ÷ Maintenance Hours
 This metric helps compare maintenance candidates when available maintenance time is limited.
 
 For example, two pumps may both have positive expected benefits, but the pump generating greater expected benefit per maintenance hour may provide better utilization of a constrained maintenance workforce.
+
+8.8 Maintenance Decision Framework
+
+The complete risk and economic framework can therefore be represented as:
+Failure Probability
+        │
+        ▼
+   Risk Assessment
+        │
+        ▼
+   Failure Cost
+        │
+        ▼
+Expected Failure Loss
+        │
+        ├──────────────┐
+        │              │
+        ▼              ▼
+Maintenance Cost   Maintenance Hours
+        │              │
+        └──────┬───────┘
+               ▼
+      Expected Net Benefit
+               │
+               ▼
+       Maintenance Priority
+
+This framework transforms a machine learning prediction into a measurable maintenance decision criterion.
+
+8.9 Pump-Level Decision Dataset
+
+The outputs of the predictive and economic analysis were consolidated into a pump-level decision dataset.
+
+The resulting dataset contains information such as:
+
+- Pump ID
+- Acoustic features
+- Actual operating condition
+- Failure probability
+- Predicted operating condition
+- Risk level
+- Maintenance hours
+- Failure cost
+- Maintenance cost
+- Expected failure loss
+- Expected net benefit
+- Benefit per maintenance hour
+- Maintenance decision
+
+This consolidated dataset acts as the input to the optimization stage.
+
+# Outcome
+
+The predictive maintenance stage transformed the Random Forest's failure probabilities into an actionable risk and economic framework.
+
+The system can now evaluate each pump based on:
+
+Likelihood of failure → Risk → Economic exposure → Maintenance cost → Expected benefit → Maintenance priority
+
+This creates the decision layer required for the next stage, where Mixed-Integer Linear Programming (MILP) is used to select an optimal maintenance portfolio under limited maintenance capacity.
