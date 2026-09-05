@@ -1153,3 +1153,120 @@ The system can now evaluate each pump based on:
 Likelihood of failure → Risk → Economic exposure → Maintenance cost → Expected benefit → Maintenance priority
 
 This creates the decision layer required for the next stage, where Mixed-Integer Linear Programming (MILP) is used to select an optimal maintenance portfolio under limited maintenance capacity.
+
+## ✅ 9. MILP-Based Maintenance Optimization
+
+The predictive maintenance framework generates failure probabilities, risk levels, expected failure losses, maintenance costs, and maintenance requirements for individual pumps. However, maintenance planning is subject to practical resource constraints.
+
+A maintenance team cannot necessarily service every high-risk pump at the same time because available maintenance hours, workforce, and other resources are limited.
+
+To address this problem, a **Mixed-Integer Linear Programming (MILP)** optimization model was developed to determine which pumps should be selected for maintenance while considering both operational risk and economic benefit.
+
+The objective was to move from:
+
+> **"Which pumps are risky?"**
+
+to:
+
+> **"Which combination of pumps should be maintained given limited maintenance resources?"**
+
+---
+
+### 9.1 Why Optimization Was Required
+
+A simple risk-ranking approach would sort pumps by failure probability and select the highest-risk pumps until the maintenance capacity is reached.
+
+However, failure probability alone does not account for:
+
+- Different consequences of pump failure.
+- Different maintenance costs.
+- Different maintenance durations.
+- Economic benefit of intervention.
+- Risk constraints.
+- Limited maintenance capacity.
+
+Therefore, the project formulated maintenance planning as a constrained optimization problem.
+
+The decision process becomes:
+
+```text
+Machine Learning
+      │
+      ▼
+Failure Probability
+      │
+      ▼
+Risk & Economic Analysis
+      │
+      ▼
+MILP Optimization
+      │
+      ├── Risk
+      ├── Failure Loss
+      ├── Maintenance Cost
+      ├── Maintenance Hours
+      └── Capacity Constraints
+      │
+      ▼
+Optimized Maintenance Portfolio
+```
+9.2 Decision Variable
+
+A binary decision variable was defined for each pump.
+- xᵢ = 1  → Pump i is selected for maintenance
+- xᵢ = 0  → Pump i is not selected
+
+This binary formulation reflects the real maintenance decision: a pump is either included in the current maintenance plan or it is not.
+
+9.3 Maintenance Capacity Constraint
+
+The maintenance team has a limited number of available maintenance hours.
+
+The optimization therefore constrains the total maintenance time of the selected pumps.
+
+Conceptually:
+Σ Maintenance_Hoursᵢ × xᵢ ≤ Available_Maintenance_Hours
+
+For the current project scenario:
+| Capacity Metric             |         Value |
+| --------------------------- | ------------: |
+| Available Maintenance Hours | **148 hours** |
+| Optimized Maintenance Hours | **148 hours** |
+| Capacity Utilization        |      **100%** |
+
+The resulting solution uses the available maintenance capacity fully.
+
+9.4 Risk Constraint
+
+The optimization framework also incorporates a risk-based selection criterion.
+
+A risk threshold, represented by α = 0.60, was used to identify the pool of pumps meeting the specified failure-risk criterion.
+
+For the current scenario:
+| Risk Metric                  |     Result |
+| ---------------------------- | ---------: |
+| Risk Threshold (α)           |   **0.60** |
+| Pumps Meeting Risk Threshold |     **68** |
+| Pumps Selected by MILP       |     **37** |
+| Risk-Threshold Coverage      | **54.41%** |
+
+This ensures that the optimization does not treat all pumps identically and focuses the maintenance portfolio on pumps meeting the defined risk criterion.
+
+9.5 Economic Objective
+
+The optimization considers the economic consequences associated with pump failure and maintenance.
+
+For each pump, the framework estimates:
+
+Expected Failure Loss
+=
+Failure Probability × Failure Cost
+
+and:
+Expected Net Benefit
+=
+Expected Failure Loss − Maintenance Cost
+
+These quantities provide an economic basis for deciding which maintenance interventions are more valuable.
+
+The optimization therefore seeks a maintenance portfolio that provides a strong expected economic return while satisfying the operational constraints.
