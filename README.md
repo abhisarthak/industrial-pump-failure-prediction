@@ -319,6 +319,24 @@ This was particularly relevant for determining the statistical behavior of the e
 
 The next stage examined relationships between individual acoustic features and the pump operating condition.
 
+Each acoustic feature was compared across the two operating-condition
+classes using feature-wise boxplots. This allowed the distribution,
+central tendency, variability, and potential outliers of individual
+features to be compared between the two classes.
+
+### Acoustic Feature Comparison Across Pump Conditions
+
+<img width="1872" height="2013" alt="features_by_condition" src="https://github.com/user-attachments/assets/0ce560d6-5931-4ac7-abc0-decb3583cc32" />
+
+The feature-wise comparisons show differences in the distributions of
+several acoustic characteristics between normal and abnormal operating
+conditions. At the same time, overlap remains between the two classes,
+indicating that no single acoustic feature is sufficient to reliably
+separate the operating conditions. This supports the use of a multivariate
+machine learning approach that combines information from multiple
+acoustic characteristics.
+
+
 The acoustic features were compared between:
 
 - **Normal operating condition**
