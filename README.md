@@ -79,6 +79,13 @@ The raw pump recordings contain acoustic signals in the form of time-series audi
 
 The objective of this stage was to capture different aspects of the pump sound, including signal energy, temporal behavior, and frequency characteristics, and convert them into a structured feature matrix suitable for statistical analysis and machine learning.
 
+<img width="1255" height="392" alt="waveform_sample_pump" src="https://github.com/user-attachments/assets/1e1d7ba0-4eac-430f-a34a-07471f8caa85" />
+
+The waveform illustrates the amplitude variation of a representative pump
+acoustic recording over time. This provides an initial view of the temporal
+behavior of the recorded signal before numerical acoustic features are
+extracted.
+
 ### Feature Extraction Pipeline
 
 A reusable acoustic feature extraction pipeline was developed using **Librosa**. Each of the **868 audio recordings** was loaded and processed individually, and a fixed set of acoustic features was calculated for every recording.
@@ -165,6 +172,12 @@ MFCC_1, MFCC_2, ..., MFCC_13
 | Spectral      | Centroid, Bandwidth, Roll-off |                  3 |
 | Cepstral      | MFCCs                         |                 13 |
 | **Total**     |                               |             **18** |
+
+<img width="1989" height="1769" alt="acoustic_feature_distributions" src="https://github.com/user-attachments/assets/d90f1b97-cb4d-4a49-a20d-a989e99402c0" />
+The distributions show the statistical spread of the extracted acoustic
+features across the 868 recordings. The features exhibit different ranges,
+scales, and distribution shapes, which were examined before downstream
+statistical analysis and machine learning.
 
 ## Processing Workflow
 
@@ -286,11 +299,13 @@ This helped determine whether certain acoustic features exhibited unusual or hig
 
 #### Outlier Analysis
 
-Boxplots were used to identify potential extreme observations.
+Boxplots were used to examine the spread of the acoustic features and
+identify observations that fall outside the typical distribution range.
 
 The analysis examined whether individual recordings contained feature values substantially different from the majority of the dataset.
 
 Potential outliers were treated as observations requiring investigation rather than automatically being removed, since unusual acoustic measurements may represent genuine changes in pump operating conditions.
+
 
 #### Skewness Analysis
 
@@ -335,9 +350,16 @@ The dataset contained:
 | Abnormal | **456** |
 | **Total** | **868** |
 
-The class distribution was considered during subsequent model development because differences in class frequency can influence the behavior of classification algorithms and evaluation metrics.
 
-This analysis subsequently motivated the use of appropriate preprocessing and class-imbalance handling during the machine learning stage.
+<img width="541" height="470" alt="pump_condition_distribution" src="https://github.com/user-attachments/assets/63314d62-860f-492d-beb0-b9b89c42306d" />
+
+The class distribution shows that the dataset contains observations from both
+normal and abnormal operating conditions, with abnormal recordings
+representing a slightly larger proportion of the dataset.
+
+The class distribution was considered during subsequent model development
+because differences in class frequency can influence classification model
+behavior and evaluation.
 
 ---
 
