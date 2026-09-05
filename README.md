@@ -387,6 +387,8 @@ A correlation matrix was generated to investigate relationships between the acou
 
 A heatmap was used to visualize the correlation structure across the feature set.
 
+<img width="1479" height="1190" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/271e331d-3d73-4d1a-9619-04da7fab4635" />
+
 The analysis helped identify:
 
 - Strongly correlated acoustic features.
