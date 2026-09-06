@@ -1347,6 +1347,12 @@ The MILP selects a portfolio of 37 pumps from the available pump population whil
 
 ![Uploading selected_failure_probability.png…]()
 
+The selected portfolio contains pumps with predicted failure probabilities predominantly above the α = 0.60 risk threshold, indicating that the optimization prioritizes assets with substantial predicted failure risk rather than selecting pumps solely according to their individual risk scores.
+
+<img width="889" height="590" alt="capacity_utilization" src="https://github.com/user-attachments/assets/af643057-0533-4945-b921-3cc0703292e0" />
+
+The available maintenance capacity of 148 hours is fully utilized, corresponding to 100% capacity utilization. This demonstrates that the optimization incorporates the technician-capacity constraint directly into portfolio selection.
+
 
 9.4 Risk Constraint
 
