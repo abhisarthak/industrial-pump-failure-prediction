@@ -1343,6 +1343,11 @@ For the current project scenario:
 
 The resulting solution uses the available maintenance capacity fully.
 
+The MILP selects a portfolio of 37 pumps from the available pump population while prioritizing assets with elevated predicted failure probability. The selected pumps are concentrated toward the higher-risk end of the probability distribution, with the optimization using a risk threshold of α = 0.60 as part of the portfolio constraints.
+
+![Uploading selected_failure_probability.png…]()
+
+
 9.4 Risk Constraint
 
 The optimization framework also incorporates a risk-based selection criterion.
