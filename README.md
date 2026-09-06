@@ -826,6 +826,17 @@ classification threshold is varied. Increasing the threshold generally
 reduces the number of pumps classified as abnormal, increasing precision
 while reducing recall.
 
+### Classification Performance at the Optimized Threshold
+
+The selected operating threshold was then applied to the model predictions
+to examine the resulting classification behavior.
+
+<img width="541" height="454" alt="optimized_threshold_confusion_matrix" src="https://github.com/user-attachments/assets/4f8811e9-c2ea-48de-bf59-167d429cb42f" />
+
+At the optimized threshold, the model correctly classified **80 normal
+recordings and 76 failure recordings**, while producing **11 false
+positives and 7 false negatives** in this evaluation.
+
 The selected threshold was therefore determined based on the desired
 balance between correctly identifying abnormal pumps and limiting
 unnecessary maintenance alerts.
