@@ -1370,6 +1370,35 @@ For the current scenario:
 
 This ensures that the optimization does not treat all pumps identically and focuses the maintenance portfolio on pumps meeting the defined risk criterion.
 
+### Feasibility Boundary Analysis
+
+The interaction between the required risk coverage and available maintenance
+capacity was further examined to identify the feasibility boundary of the
+optimization problem.
+
+<img width="1089" height="590" alt="risk_coverage_capacity_feasibility" src="https://github.com/user-attachments/assets/02595462-a06a-43a0-8647-4bf8c10089d6" />
+
+The analysis illustrates how increasingly stringent risk-coverage
+requirements increase the number of high-risk pumps that must be selected.
+Once the required number exceeds the available maintenance capacity, the
+optimization problem becomes infeasible.
+
+The identified feasibility boundary provides a practical indication of the
+maximum risk-coverage requirement that can be supported under the specified
+maintenance capacity.
+
+### Risk Coverage Sensitivity
+
+The feasibility of the maintenance optimization problem depends on the
+minimum level of high-risk pump coverage required by the decision maker.
+
+<img width="987" height="590" alt="risk_coverage_threshold_sensitivity" src="https://github.com/user-attachments/assets/c034577f-868b-4910-ac50-b764d3155f51" />
+
+The sensitivity analysis shows how the minimum number of pumps required
+increases as the risk coverage requirement α becomes more stringent.
+Because maintenance capacity is limited, sufficiently high risk-coverage
+requirements can eventually make the optimization problem infeasible.
+
 9.5 Economic Objective
 
 The optimization considers the economic consequences associated with pump failure and maintenance.
