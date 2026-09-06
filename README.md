@@ -915,6 +915,17 @@ This makes the model output easier to investigate and interpret.
 
 7.2 SHAP Feature Importance
 
+### Global SHAP Feature Importance
+<img width="772" height="859" alt="shap_summary" src="https://github.com/user-attachments/assets/627b3662-4f01-48ad-82d3-4bd947496510" />
+
+The SHAP summary plot provides a global view of the features that most
+strongly influence the Random Forest predictions. Features are ranked
+according to their overall contribution to the model output.
+
+The horizontal position of each point represents the SHAP value, indicating
+whether the corresponding feature value pushes the prediction toward a
+higher or lower model output. The color represents the relative feature
+value.
 A global SHAP analysis was performed to understand which acoustic features had the greatest influence on the model across the dataset.
 
 The analysis examined the magnitude of SHAP values associated with the different acoustic features.
