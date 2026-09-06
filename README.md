@@ -1411,6 +1411,33 @@ The selected portfolio therefore represents a constrained maintenance plan rathe
 
 9.7 Economic Performance
 
+### Maintenance Strategy Comparison
+
+The optimized maintenance portfolio was compared with two alternative
+decision strategies: ML-based risk ranking and economic ranking.
+
+<img width="989" height="590" alt="images:expected_net_benefit_by_strategy" src="https://github.com/user-attachments/assets/827e3bb1-9a30-4672-9372-3b788bef2a2b" />
+
+The risk-constrained MILP achieves an expected net benefit of approximately
+₹30.58 lakh, compared with ₹19.32 lakh for ML risk ranking and ₹17.67 lakh
+for economic ranking. This demonstrates the value of jointly considering
+failure risk, maintenance requirements, economic consequences, and available
+maintenance capacity.
+
+### Actual Failure Coverage
+
+Economic performance was evaluated alongside observed failure coverage to
+ensure that the optimization did not focus only on monetary benefit.
+
+<img width="989" height="590" alt="images:actual_failure_coverage_by_strategy" src="https://github.com/user-attachments/assets/aa3baa97-6571-4776-8530-5df251bf9d7a" />
+
+The ML risk-ranking strategy provides the highest observed failure coverage
+at 44.58%, while the risk-constrained MILP covers 43.37% of observed
+failures. Although the ML ranking has slightly higher failure coverage, the
+MILP achieves substantially higher expected net benefit while satisfying
+the maintenance-resource constraints.
+
+
 The optimized maintenance portfolio was evaluated using the economic framework developed in the previous stage.
 
 For the selected portfolio:
