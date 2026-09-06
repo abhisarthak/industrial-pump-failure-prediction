@@ -861,7 +861,28 @@ The probability output was subsequently used in:
 - Economic modeling
 - MILP-based maintenance optimization
 
-6.7 Prediction Threshold Optimization
+
+### 6.7 False Negative Analysis
+
+Because missed failures can have greater operational consequences than
+unnecessary maintenance alerts, the false-negative cases were examined
+separately.
+
+The acoustic characteristics of correctly identified failures were compared
+with failures that were incorrectly classified as normal. Feature-level
+comparisons were performed for selected spectral and MFCC features.
+
+<img width="1536" height="1024" alt="false_negative_feature_analysis" src="https://github.com/user-attachments/assets/9e8a3928-c8b7-460f-a2cc-c6d1ae137c90" />
+
+The comparisons provide an additional diagnostic view of the failure cases
+that remain difficult for the classifier to identify. Differences in the
+feature distributions suggest that some missed failures may exhibit
+acoustic characteristics that overlap with the normal operating condition.
+
+This analysis was used to understand model limitations rather than treating
+false negatives simply as classification errors.
+
+6.8 Prediction Threshold Optimization
 
 The default classification threshold was also evaluated from a maintenance perspective.
 
