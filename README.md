@@ -962,6 +962,19 @@ This allows the model to be interpreted at the dataset level rather than examini
 
 7.5 Feature Interaction Analysis
 
+### SHAP Dependence Analysis
+
+Dependence plots were used to examine how individual acoustic feature
+values influence their SHAP contribution to the model prediction.
+
+<img width="1536" height="1024" alt="shap_top_feature_dependence" src="https://github.com/user-attachments/assets/309dc6d2-2a37-4ae6-b540-e34e70b9b102" />
+
+
+The dependence plots illustrate the relationship between feature values and
+their corresponding contribution to the model output. The patterns also
+show that the influence of important acoustic features can be non-linear,
+supporting the use of a non-linear ensemble model such as Random Forest.
+
 Interactions between acoustic features were also investigated using SHAP.
 
 This is useful because pump acoustic behavior is not necessarily determined by one measurement in isolation.
